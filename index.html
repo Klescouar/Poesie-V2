@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Poesie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="appPoesie" ng-controller="poesieCtrl">
+    <div class="header">
+        <h1>Poetry Hunter</h1>
+        <p>Que recherchez vous : </p>
+
+        <div class="categories">
+            <div class="category" ng-repeat="category in categories" ng-click="select()" ng-class="{'active': category.status, 'inactive':category.status == false, 'error': error}">
+                <p>{{category.name}}</p>
+            </div>
+        </div>
+
+        <div class="searchDiv">
+            <form ng-submit="search(word)">
+<textarea autocomplete="off" id="searchInput" placeholder="Tapez un mot ici..." ng-keypress="myFunct($event, word)" type="input" ng-model="word" name="name" value="" name="name"></textarea>
+                <input id="searchButton" type="submit" ng-click="search(word)" name="button" value="Rechercher">
+            </form>
+        </div>
+        <!-- <audio controls autoplay hidden="">
+            <source src="audio/poetic.mp3" type="audio/ogg">
+        </audio> -->
+    </div>
+
+
+    <div id="result">
+        <div class="containerWidth" ng-show="categories[2].status && ana.length">
+            <div class="resultContainer">
+                <h1>Anagrammes:</h1>
+                <div class="anagramme" ng-repeat="anagramme in ana track by $index">
+                    <p>{{anagramme}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="containerWidth" ng-show="categories[0].status && syno.length">
+            <div class="resultContainer">
+                <h1>Synonymes:</h1>
+                <div class="synonyme" ng-repeat="synonyme in syno track by $index">
+                    <p> {{synonyme}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="containerWidth" ng-show="categories[1].status && rimes.length">
+            <div class="resultContainer" >
+                <h1>Rimes:</h1>
+                <div class="rime" ng-repeat="rime in rimes track by $index">
+                    <p>{{rime}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="containerWidth" ng-show="categories[3].status && homo.length">
+            <div class="resultContainer">
+                <h1>Homophones:</h1>
+                <div class="hommophone" ng-repeat="homophone in homo track by $index">
+                    <p>{{homophone}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="containerWidth" ng-show="categories[4].status && anto.length">
+            <div class="resultContainer">
+                <h1>Antonymes:</h1>
+                <div class="hommophone" ng-repeat="antonyme in anto track by $index">
+                    <p>{{antonyme}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- name: Poetic Box, Poetiquement Correct, La boite a Poesie, Poetry Hunter -->
+
+
+
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/jq.js"></script>
+</body>
+
+</html>

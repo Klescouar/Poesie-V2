@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: "body";
+  background-image: url(../ecrire.jpg);
+  background-color: radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(252,252,252,0) 1%, rgba(0,0,0,0.82) 99%, rgba(0,0,0,0.83) 100%);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@keyframes example {
+    0% {
+        width: 0px;
+    }
+    100% {
+      width: 580px;
+    }
+}
+@font-face {
+    font-family: 'logo';
+    src: url('../font/Sweetly Broken.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'body';
+    src: url('../font/CaviarDreams.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+.header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.header h1{
+  margin-top: 0px;
+  font-size: 14em;
+  font-family: "logo";
+  font-weight: normal;
+  color: white;
+  text-shadow: 2px 2px 5px #333;
+}
+.header p:nth-child(2) {
+  margin: 30px auto 20px auto;
+  color: white;
+  font-size: 1.7em;
+  text-shadow: 2px 2px 5px #333;
+
+}
+#searchInput {
+    width: 580px;
+    height: 80px;
+    margin-right: 7px;
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+#searchButton {
+    height: 48px;
+    width: 120px;
+    background-color: #47662f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 5px #333;
+}
+#searchButton:hover {
+    background-color: #334922;
+}
+.searchDiv {}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.category p {
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.category {
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 2px #333;
+}
+.inactive {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 2px solid white;*/
+    margin: 10px 5px 30px 5px;
+    color: rgb(52, 52, 52);
+    /*border: 2px solid rgba(255, 255, 255, 0.22);*/
+    background-color: rgba(255, 255, 255, 0.62);
+}
+.active {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 2px solid white;*/
+    margin: 10px 5px 30px 5px;
+    color: rgb(52, 52, 52);
+    /*border: 2px solid rgba(255, 255, 255, 0.95);*/
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.error {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 2px solid rgba(219, 133, 133, 0.95);*/
+    margin: 10px 5px 30px 5px;
+    color: rgb(52, 52, 52);
+    background-color: rgba(232, 186, 186, 0.62);
+}
+#result{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.containerWidth{
+  width: 230px;
+}
+.resultContainer{
+  margin: 0px 15px 0px 15px;
+  background-color: rgba(251, 251, 251, 0.75);
+  padding: 8px;
+  box-shadow: 1px 1px 2px #333;
+border-radius: 5px;
+margin-bottom: 50px;
+}
+.resultContainer p {
+  padding: 3px;
+}
+.resultContainer h1{
+  font-size: 1.2em;
+  padding: 0px 0px 5px 3px;
+  border-bottom: 1px solid rgb(140, 140, 140);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 720px) {
+  .header h1{
+    font-size: 10em;
+  }
+  .header p:nth-child(2) {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 520px) {
+    .categories {
+        flex-direction: column;
+        width: 100%;
+    }
+    .category {
+        width: 80%;
+        margin: 10px auto 10px auto;
+    }
+    .header h1{
+      font-size: 7em;
+    }
+    .header p:nth-child(2) {
+      font-size: 1.4em;
+    }
+}
