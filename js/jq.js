@@ -3,11 +3,14 @@ $(document).ready(function() {
     $('#searchButton').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $("#result").offset().top - 30
+            scrollTop: $("#margin").offset().top - 30
         }, 500);
     });
 
-
+    $(document).ready(function(){
+      $('#title').focus();
+        $('#text').autosize();
+    });
 
 //     $('#searchInput').keyup(function(e){
 //        if(e.keyCode == 8){

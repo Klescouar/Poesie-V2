@@ -8,22 +8,29 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
         .success(function(data) {
             $scope.dico = data;
             $scope.error = false;
+            $scope.sauver = 0;
             var dicolength = $scope.dico.length;
+
+
+            console.log($scope.sauver);
 
             $scope.myFunct = function(keyEvent, word) {
                 var wordFin = word.toLowerCase();;
-                if (keyEvent.which === 32) {
-                  
-                    $scope.wordFinal = [];
+                if (keyEvent.which === 32 || keyEvent.which === 13) {
+
                     $scope.syno = [];
                     $scope.ana = [];
                     $scope.rimes = [];
                     $scope.homo = [];
                     $scope.anto = [];
+                    $scope.error = 0;
 
                     // var lastIndex = word.lastIndexOf(" ");
                     wordFin = wordFin.split(" ");
                     wordFin = wordFin[wordFin.length - 1]
+                    $scope.error = wordFin.indexOf("\'");
+                    wordFin = wordFin.slice($scope.error + 1);
+                    console.log($scope.error);
                     console.log(wordFin);
 
 
@@ -102,19 +109,19 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
 
     $scope.categories = [{
         name: "Synonymes",
-        status: false,
+        status: true,
     }, {
         name: "Rimes",
-        status: false,
+        status: true,
     }, {
         name: "Anagrammes",
-        status: false,
+        status: true,
     }, {
         name: "Homophones",
-        status: false,
+        status: true,
     }, {
         name: "Antonymes",
-        status: false,
+        status: true,
     }];
 
 
