@@ -24,15 +24,26 @@
     <div id="wrapper">
         <form id="paper" method="get" action="">
             <div id="margin">
-                <input placeholder="Ecrivez votre titre ici..." autocomplete="off" id="titre" type="text" name="title">
+                <input placeholder="Ecrivez votre titre ici..." autocomplete="off" ng-model="titre" id="titre" type="text" name="title">
             </div>
             <textarea placeholder="Commencez votre poème ici..." ng-keypress="myFunct($event, word)" id="text" ng-model="word" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px;"></textarea>
             <br>
-            <!-- <input id="button" type="submit" value="Create"> -->
+            <input id="button" ng-show="!custom" type="button" value="Voir le resultat" ng-click="toggleCustom()">
+            <input id="button" ng-show="custom" type="button" value="Retourner dans l'atelier" ng-click="toggleCustom()">
+
         </form>
     </div>
 
-    <div id="result">
+
+
+    <div id="restit" ng-show="custom">
+        <h1>{{titre}}</h1>
+        <pre id="poeme">
+            {{word}}
+        </pre>
+    </div>
+
+    <div id="result" ng-show="!custom">
         <div class="containerWidth">
             <div class="resultContainer">
                 <h1>Anagrammes:</h1>
@@ -57,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="containerWidth" >
+        <div class="containerWidth">
             <div class="resultContainer">
                 <h1>Homophones:</h1>
                 <div class="hommophone" ng-repeat="homophone in homo track by $index">
@@ -65,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="containerWidth" >
+        <div class="containerWidth">
             <div class="resultContainer">
                 <h1>Antonymes:</h1>
                 <div class="hommophone" ng-repeat="antonyme in anto track by $index">

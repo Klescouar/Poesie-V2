@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('#searchButton').click(function(e) {
         e.preventDefault();
@@ -7,10 +6,18 @@ $(document).ready(function() {
         }, 500);
     });
 
-    $(document).ready(function(){
-      $('#title').focus();
-        $('#text').autosize();
+    $('#button').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#restit").offset().top - 30
+        }, 500);
     });
+});
+
+$(document).ready(function() {
+    $('#title').focus();
+    $('#text').autosize();
+});
 
 //     $('#searchInput').keyup(function(e){
 //        if(e.keyCode == 8){
@@ -21,4 +28,3 @@ $(document).ready(function() {
 //            array.push('');
 //        }
 //     });
-});

@@ -2,6 +2,10 @@ var app = angular.module('appPoesie', []);
 
 app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
 
+    $scope.custom = false;
+    $scope.toggleCustom = function() {
+        $scope.custom = $scope.custom === false ? true : false;
+    };
 
 
     $http.get("js/dico.json")
@@ -9,40 +13,34 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
             $scope.dico = data;
             $scope.error = false;
             $scope.sauver = 0;
+            $scope.newTab = [];
             var dicolength = $scope.dico.length;
 
 
-            console.log($scope.sauver);
+
 
             $scope.myFunct = function(keyEvent, word) {
-                var wordFin = word.toLowerCase();;
+                $scope.syno = [];
+                $scope.ana = [];
+                $scope.rimes = [];
+                $scope.homo = [];
+                $scope.anto = [];
+                $scope.error = 0;
+                var wordFin = word.toLowerCase();
+                wordFin = wordFin.split(" ");
+                wordFin = wordFin[wordFin.length - 1]
+                $scope.error = wordFin.indexOf("\'");
+                wordFin = wordFin.slice($scope.error + 1);
+
+
                 if (keyEvent.which === 32 || keyEvent.which === 13) {
-
-                    $scope.syno = [];
-                    $scope.ana = [];
-                    $scope.rimes = [];
-                    $scope.homo = [];
-                    $scope.anto = [];
-                    $scope.error = 0;
-
-                    // var lastIndex = word.lastIndexOf(" ");
-                    wordFin = wordFin.split(" ");
-                    wordFin = wordFin[wordFin.length - 1]
-                    $scope.error = wordFin.indexOf("\'");
-                    wordFin = wordFin.slice($scope.error + 1);
-                    console.log($scope.error);
-                    console.log(wordFin);
-
-
                     if ($scope.categories[0].status == false && $scope.categories[1].status == false && $scope.categories[2].status == false && $scope.categories[3].status == false && $scope.categories[4].status == false) {
                         $scope.error = true;
                     }
-
                     if ($scope.categories[0].status == true) {
                         if ($scope.dico[wordFin].synonymes) {
                             for (var i = 0; i < $scope.dico[wordFin].synonymes.length; i++) {
                                 $scope.syno.push($scope.dico[wordFin].synonymes[i]);
-                                console.log($scope.syno);
                             }
                         } else {
                             $scope.syno.push("Pas de synonymes disponibles pour ce mot")
@@ -57,7 +55,6 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                             $scope.anto.push("Pas d'antonymes disponibles pour ce mot")
                         }
                     }
-
                     if ($scope.categories[2].status == true) {
                         if ($scope.dico[wordFin].anagrammes) {
                             for (var i = 0; i < $scope.dico[wordFin].anagrammes.length; i++) {
@@ -67,7 +64,6 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                             $scope.ana.push("Pas d'anagrammes disponibles pour ce mot")
                         }
                     }
-
                     if ($scope.categories[1].status == true) {
                         var numPoint = $scope.dico[wordFin].phonetique.lastIndexOf(".");
                         var lastSyl = $scope.dico[wordFin].phonetique.slice(numPoint, $scope.dico[wordFin].phonetique.length);

@@ -3,26 +3,32 @@
     padding: 0;
 }
 body {
-  font-family: "body";
-  background-image: url(../ecrire.jpg);
-  background-color: radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(252,252,252,0) 1%, rgba(0,0,0,0.82) 99%, rgba(0,0,0,0.83) 100%);
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
+    font-family: "body";
+    background-image: url(../ecrire.jpg);
+    background-color: radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 0) 1%, rgba(0, 0, 0, 0.82) 99%, rgba(0, 0, 0, 0.83) 100%);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 @keyframes example {
     0% {
         width: 0px;
     }
     100% {
-      width: 580px;
+        width: 580px;
     }
 }
 @font-face {
     font-family: 'logo';
     src: url('../font/Sweetly Broken.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'poesie';
+    src: url('../font/Saint-Andrews Queen.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -40,20 +46,19 @@ body {
     align-items: center;
     text-align: center;
 }
-.header h1{
-  margin: 0px;
-  font-size: 14em;
-  font-family: "logo";
-  font-weight: normal;
-  color: white;
-  text-shadow: 2px 2px 5px #333;
+.header h1 {
+    margin: 0px;
+    font-size: 14em;
+    font-family: "logo";
+    font-weight: normal;
+    color: white;
+    text-shadow: 2px 2px 5px #333;
 }
 .header p:nth-child(2) {
-  margin: 30px auto 20px auto;
-  color: white;
-  font-size: 1.7em;
-  text-shadow: 2px 2px 5px #333;
-
+    margin: 30px auto 20px auto;
+    color: white;
+    font-size: 1.7em;
+    text-shadow: 2px 2px 5px #333;
 }
 #searchInput {
     width: 580px;
@@ -62,7 +67,6 @@ body {
     animation-name: example;
     animation-duration: 1s;
 }
-
 #searchButton {
     height: 48px;
     width: 250px;
@@ -82,8 +86,8 @@ body {
     transition: 0.15s all;
 }
 .searchDiv {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 .categories {
     display: flex;
@@ -142,134 +146,152 @@ body {
     color: rgb(52, 52, 52);
     background-color: rgba(232, 186, 186, 0.62);
 }
-#result{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  min-height: 500px;
-  margin-top: 30px;
+#result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 200px;
+    margin-top: 30px;
 }
-.containerWidth{
-  width: 230px;
+.containerWidth {
+    width: 230px;
 }
-.resultContainer{
-  margin: 0px 15px 0px 15px;
-  background-color: rgba(251, 251, 251, 0.75);
-  padding: 8px;
-  box-shadow: 1px 1px 2px #333;
-border-radius: 5px;
-margin-bottom: 50px;
+.resultContainer {
+    margin: 0px 15px 0px 15px;
+    background-color: rgba(251, 251, 251, 0.75);
+    padding: 8px;
+    box-shadow: 1px 1px 2px #333;
+    border-radius: 5px;
+    margin-bottom: 50px;
 }
 .resultContainer p {
-  padding: 3px;
+    padding: 3px;
 }
-.resultContainer h1{
-  font-size: 1.2em;
-  padding: 0px 0px 5px 3px;
-  border-bottom: 1px solid rgb(140, 140, 140);
-  text-align: center;
-  margin-bottom: 10px;
+.resultContainer h1 {
+    font-size: 1.2em;
+    padding: 0px 0px 5px 3px;
+    border-bottom: 1px solid rgb(140, 140, 140);
+    text-align: center;
+    margin-bottom: 10px;
 }
-
-
 #paper {
-	color:#FFF;
-	font-size:20px;
+    color: #FFF;
+    font-size: 20px;
 }
 #margin {
-margin:0px auto 20px auto;
-color: black;
-display: flex;
-justify-content: center;
-align-items: center;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+    margin: 0px auto 20px auto;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#restit {
+    background-color: rgba(255, 255, 255, 0.64);
+    border-radius: 10px;
+    height: 580px;
+    width: 40%;
+    margin: 150px auto 50px auto;
+    box-shadow: 0px 2px 14px #000;
+    color: black;
+    text-align: left;
+    padding: 30px 30px 10px 30px;
+}
+#restit h1 {
+    text-align: center;
+    font-family: "body";
+    font-size: 2.2em;
+}
+#restit pre {
+    margin-top: 30px;
+    white-space: pre-line;
+    font-family: "body";
+    font-size: 1.3em;
 }
 #text {
-	width:500px;
-	overflow:hidden;
-	background-color:#FFF;
-	color:#222;
-	font-weight:normal;
-	font-size:1em;
-	resize:none;
-	line-height:40px;
-	padding-left:100px;
-	padding-right:100px;
-	padding-top:45px;
-	padding-bottom:34px;
-	background-image:url(http://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(http://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-	background-repeat:repeat-y, repeat;
-	-webkit-border-radius:12px;
-	border-radius:12px;
-	-webkit-box-shadow: 0px 2px 14px #000;
-	box-shadow: 0px 2px 14px #000;
-	border-top:1px solid #FFF;
-	border-bottom:1px solid #FFF;
+    width: 500px;
+    overflow: hidden;
+    background-color: #FFF;
+    color: #222;
+    font-weight: normal;
+    font-size: 1em;
+    resize: none;
+    line-height: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 45px;
+    padding-bottom: 34px;
+    background-image: url(http://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(http://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+    background-repeat: repeat-y, repeat;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 2px 14px #000;
+    box-shadow: 0px 2px 14px #000;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
 }
 #titre {
-	background-color: rgba(255, 255, 255, 0.7);
-	border-bottom:3px solid #FFF;
-	color:#000000;
-	font-size:0.8em;
-	height:28px;
-	width:220px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom: 3px solid #FFF;
+    color: #000000;
+    font-size: 0.8em;
+    height: 28px;
+    width: 220px;
 }
 #button {
-	cursor:pointer;
-	margin-top:20px;
-	float:right;
-	height:40px;
-	padding-left:24px;
-	padding-right:24px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	font-size:20px;
-	color:#FFF;
-	text-shadow: 0px -1px 0px #000000;
-	-webkit-border-radius:8px;
-	border-radius:8px;
-	border-top:1px solid #FFF;
-	-webkit-box-shadow: 0px 2px 14px #000;
-	box-shadow: 0px 2px 14px #000;
-	background-color: #62add6;
-	background-image:url(http://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
-	background-repeat:repeat-x;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+    height: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: 0px -1px 0px #000000;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border-top: 1px solid #FFF;
+    -webkit-box-shadow: 0px 2px 14px #000;
+    /*box-shadow: 0px 2px 14px #000;*/
+    background-color: #62add6;
+    background-image: url(http://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+    background-repeat: repeat-x;
 }
 #button:active {
-	zoom: 1;
-	filter: alpha(opacity=80);
-	opacity: 0.8;
+    zoom: 1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
 }
 #button:focus {
-	zoom: 1;
-	filter: alpha(opacity=80);
-	opacity: 0.8;
+    zoom: 1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
 }
 #wrapper {
-	width:700px;
-	height:auto;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:24px;
-	margin-bottom:100px;
+    width: 700px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    margin-bottom: 100px;
 }
-.sauvegarde{
-  height: 100px;
-  background-color: white;
+.sauvegarde {
+    height: 100px;
+    background-color: white;
 }
-
-
 @media screen and (max-width: 720px) {
-  .header h1{
-    font-size: 10em;
-  }
-  .header p:nth-child(2) {
-    font-size: 1.2em;
-  }
+    .header h1 {
+        font-size: 10em;
+    }
+    .header p:nth-child(2) {
+        font-size: 1.2em;
+    }
 }
 @media screen and (max-width: 520px) {
     .categories {
@@ -280,10 +302,10 @@ align-items: center;
         width: 80%;
         margin: 10px auto 10px auto;
     }
-    .header h1{
-      font-size: 7em;
+    .header h1 {
+        font-size: 7em;
     }
     .header p:nth-child(2) {
-      font-size: 1.4em;
+        font-size: 1.4em;
     }
 }
