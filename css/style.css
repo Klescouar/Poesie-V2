@@ -193,7 +193,7 @@ body {
 #restit {
     background-color: rgba(255, 255, 255, 0.64);
     border-radius: 10px;
-    height: 580px;
+    min-height: 580px;
     width: 40%;
     margin: 150px auto 50px auto;
     box-shadow: 0px 2px 14px #000;
@@ -205,12 +205,16 @@ body {
     text-align: center;
     font-family: "body";
     font-size: 2.2em;
+    border: 1px dashed rgba(0, 0, 0, 1);
+    padding: 10px;
 }
 #restit pre {
     margin-top: 30px;
     white-space: pre-line;
     font-family: "body";
     font-size: 1.3em;
+    line-height: 30px;
+     letter-spacing: 2.5px;
 }
 #text {
     width: 500px;
