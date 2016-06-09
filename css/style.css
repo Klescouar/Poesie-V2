@@ -71,6 +71,8 @@ body {
     height: 48px;
     width: 250px;
     background-color: #47662f;
+    font-family: "body";
+    font-weight: bold;
     color: white;
     font-size: 1.2em;
     border: none;
@@ -214,7 +216,7 @@ body {
     font-family: "body";
     font-size: 1.3em;
     line-height: 30px;
-     letter-spacing: 2.5px;
+    letter-spacing: 2px;
 }
 #text {
     width: 500px;
@@ -247,25 +249,15 @@ body {
     width: 220px;
 }
 #button {
-    cursor: pointer;
-    margin-top: 20px;
-    float: right;
+  float: right;
+    margin: 20px auto 0px auto;
+    width: 286px;
     height: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    color: #FFF;
-    text-shadow: 0px -1px 0px #000000;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-    border-top: 1px solid #FFF;
-    -webkit-box-shadow: 0px 2px 14px #000;
-    /*box-shadow: 0px 2px 14px #000;*/
-    background-color: #62add6;
-    background-image: url(http://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
-    background-repeat: repeat-x;
+    border: none;
+    background-color: #509FD1;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #000;
 }
 #button:active {
     zoom: 1;
