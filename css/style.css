@@ -251,6 +251,9 @@ body {
     height: 40px;
     width: 280px;
 }
+#titre:focus{
+  background-color: rgba(232, 230, 230, 0.8);
+}
 #button {
   float: right;
     margin: 20px auto 0px auto;
